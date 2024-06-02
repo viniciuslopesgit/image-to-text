@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Image</title>
+</head>
+<body>
+    <h1>Text to Image</h1>
+    <textarea id="prompt" rows="4" cols="50" placeholder="Enter your prompt"></textarea><br>
+    <button onclick="generate()">Generate</button><br>
+    <div id="results"></div>
+
+    <script>
+        function generate() {
+            var prompt = document.getElementById('prompt').value;
+            fetch('/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    prompt: prompt
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                var resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = '';
+                data.results.forEach(imagePath => {
+                    var img = document.createElement('img');
+                    img.src = '/' + imagePath;  // Usa caminho relativo
+                    resultsDiv.appendChild(img);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
+
