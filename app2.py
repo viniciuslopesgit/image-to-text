@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 from flask import Flask, render_template
 import random
 import uuid
-import os
 from diffusers import StableDiffusionXLPipeline, EulerAncestralDiscreteScheduler
 import torch
 import numpy as np
@@ -15,12 +14,6 @@ def index():
     return render_template('index.html')
 
 MAX_SEED = np.iinfo(np.int32).max
-# Diretório para salvar as imagens
-IMAGE_DIR = 'static/images'
-
-# Verifica se o diretório de imagens existe, se não, cria
-if not os.path.exists(IMAGE_DIR):
-    os.makedirs(IMAGE_DIR)
 
 if torch.cuda.is_available():
     pipe = StableDiffusionXLPipeline.from_pretrained(
@@ -34,9 +27,8 @@ if torch.cuda.is_available():
 
 def save_image(img):
     unique_name = str(uuid.uuid4()) + ".png"
-    img_path = os.path.join(IMAGE_DIR, unique_name)
-    img.save(img_path)
-    return img_path
+    img.save(unique_name)
+    return unique_name
 
 def randomize_seed_fn(randomize_seed: bool) -> int:
     if randomize_seed:
