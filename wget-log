@@ -1,0 +1,11 @@
+--2024-06-08 17:53:53--  https://www.nvidia.com/content/DriverDownloads/confirmation.php?url=/tesla/525.85.12/nvidia-driver-local-repo-ubuntu2004-525.85.12_1.0-1_amd64.deb
+Resolving www.nvidia.com (www.nvidia.com)... 96.16.54.155, 96.16.54.178
+Connecting to www.nvidia.com (www.nvidia.com)|96.16.54.155|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2647 (2.6K) [text/html]
+Saving to: ‘confirmation.php?url=%2Ftesla%2F525.85.12%2Fnvidia-driver-local-repo-ubuntu2004-525.85.12_1.0-1_amd64.deb’
+
+                    confirmation.php?url   0%[                                                                                  ]       0  --.-KB/s               confirmation.php?url=%2Ftesla%2F525.85.1 100%[=================================================================================>]   2.58K  --.-KB/s    in 0s      
+
+2024-06-08 17:53:54 (429 MB/s) - ‘confirmation.php?url=%2Ftesla%2F525.85.12%2Fnvidia-driver-local-repo-ubuntu2004-525.85.12_1.0-1_amd64.deb’ saved [2647/2647]
+

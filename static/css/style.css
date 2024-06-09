@@ -76,7 +76,7 @@ body {
     margin-bottom: -5px;
     opacity: 50%;
     margin-top: 0px;
-    font-size: 14;
+    font-size: 14px;
 }
 
 #input, #results {
@@ -140,7 +140,7 @@ body {
 
 textarea {
     width: 100%;
-    padding: 10px;
+    padding: 10px 20px 10px 20px;
     border: 1px solid #d3d3d3;
     border-radius: 5px;
     font-size: 14px;
@@ -192,6 +192,7 @@ button:hover {
     min-width: 300px; /* Largura mínima de 300px */
     object-fit: contain;
     padding: 0;
+    background-color: #eaeaea;
 }
 
 
@@ -238,16 +239,18 @@ button:hover {
 
 
 #footer {
-    background-color: #202020;
+    border-top: 1px solid #e2e2e2;
     text-align: center;
     height: 50px;
     width: 100%;
     bottom: 0;
+    margin-top: 100px;
 }
 
 #footer p {
     font-size: 12px;
-    color: #ececec;
+    color: rgb(20, 20, 20);
+    padding-top: 10px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -290,8 +293,11 @@ button:hover {
 
 @media only screen and (max-width: 480px) {
 
-    
     #input {
         font-size: 14px;
+    }
+
+    #footer {
+        margin-top: 30px;
     }
 }

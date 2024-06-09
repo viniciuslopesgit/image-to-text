@@ -1,3 +1,5 @@
+flask
+tensorflow
 torch
 diffusers
 transformers
@@ -6,3 +8,5 @@ accelerate
 spaces
 peft
 schedule
+
+//sudo apt install nvidia-cuda-toolkit

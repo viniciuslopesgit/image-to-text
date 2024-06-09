@@ -1,5 +1,4 @@
-from flask import Flask, request, jsonify
-from flask import Flask, render_template
+from flask import Flask, request, jsonify, render_template
 import random
 import uuid
 import os
@@ -33,7 +32,7 @@ if torch.cuda.is_available():
     pipe.to("cuda")
 
 def save_image(img):
-    unique_name = str(uuid.uuid4()) + ".png"
+    unique_name = str(uuid.uuid4()) + ".jpg"
     img_path = os.path.join(IMAGE_DIR, unique_name)
     img.save(img_path)
     return img_path
@@ -50,7 +49,7 @@ def generate():
     seed = randomize_seed_fn(True)  # Define seed aleatoriamente
     generator = torch.Generator().manual_seed(seed)   
 
-    negative_prompt = "(deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, (mutated hands and fingers:1.4), disconnected limbs, mutation, mutated, ugly, disgusting, blurry, amputation, NSFW"
+    negative_prompt = " "
 
     options = {
         "prompt": prompt,
@@ -71,3 +70,4 @@ def generate():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
